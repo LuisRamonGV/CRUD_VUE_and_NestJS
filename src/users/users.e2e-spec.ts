@@ -4,6 +4,10 @@ import { INestApplication } from '@nestjs/common';
 import { AppModule } from '../app.module';
 import { PrismaService } from '../prisma/prisma.service';
 
+/**
+ * End-to-End tests for the UsersController.
+ * This suite tests the complete flow of creating, retrieving, updating, and deleting users.
+ */
 describe('UsersController (e2e)', () => {
   let app: INestApplication;
   let prisma: PrismaService;
@@ -17,7 +21,7 @@ describe('UsersController (e2e)', () => {
     await app.init();
 
     prisma = app.get<PrismaService>(PrismaService);
-    await prisma.user.deleteMany(); // Limpiar la base de datos antes de las pruebas
+    await prisma.user.deleteMany(); 
   });
 
   afterAll(async () => {

@@ -13,6 +13,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// Model representing a User in the system
 model User {
   id        Int      @id @default(autoincrement())
   name      String
@@ -22,6 +23,7 @@ model User {
   updatedAt DateTime @updatedAt
 }
 
+// Model representing a Log entry in the system
 model Log {
   id        Int      @id @default(autoincrement())
   message   String
