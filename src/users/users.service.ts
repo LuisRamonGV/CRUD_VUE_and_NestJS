@@ -31,6 +31,7 @@ export class UsersService {
           });
     
           await this.mailService.sendWelcomeEmail(user.email);
+          await this.logsService.logActivity(`User ${user.email} deleted`);
     
           this.logger.log(`User created: ${user.email}`);
     
