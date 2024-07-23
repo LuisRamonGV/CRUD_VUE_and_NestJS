@@ -1,7 +1,6 @@
 <template>
   <div class="flex">
     <div class="bg-slate-800 text-white p-4 fixed top-0 left-0 h-full w-64 z-20">
-      <!-- Sidebar content goes here -->
       <div class="mb-4 text-white">Dashboard</div>
       <h3>By Ramon Garcia</h3>
     </div>
@@ -9,7 +8,6 @@
       <Navbar />
       <div class="mt-16 p-4">
         <UserTable />
-        <!-- Additional dashboard content -->
       </div>
     </div>
   </div>
@@ -22,6 +20,6 @@ import UserTable from '~/pages/UserTable.vue';
 
 <style scoped>
 .ml-64 {
-  margin-left: 16rem; /* Matches the width of the sidebar */
+  margin-left: 16rem;
 }
 </style>

@@ -1,21 +1,20 @@
-// prisma/seed.ts
 import { PrismaClient } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
 
 const prisma = new PrismaClient();
 
 async function main() {
-  // Borra todos los usuarios existentes
+  // Delete existing users
   await prisma.user.deleteMany({});
 
-  // Datos de prueba
+  // Data
   const users = Array.from({ length: 20 }, (_, index) => ({
     name: `User ${index + 1}`,
     email: `user${index + 1}@example.com`,
     password: bcrypt.hashSync('Password123!', 10),
   }));
 
-  // Inserta usuarios en la base de datos
+  // Insert Users in DB
   await prisma.user.createMany({
     data: users,
   });
