@@ -133,7 +133,7 @@ async function handleSubmit() {
       console.log('Registro exitoso', response.data);
       router.push('/dashboard');
     } catch (error) {
-      errorMessage.value = 'Error en el registro: ' + (error.response?.data?.message || error.message);
+      errorMessage.value = 'Error en el registro, el correo ya se encuentra registrado ';
       console.error('Error en el registro', error);
     }
   }

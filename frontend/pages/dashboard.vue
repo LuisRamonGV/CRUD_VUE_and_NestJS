@@ -8,8 +8,7 @@
     <div class="flex-1 ml-64">
       <Navbar />
       <div class="mt-16 p-4">
-        <!-- Page content goes here -->
-        <h1 class="text-2xl">Welcome to the Dashboard</h1>
+        <UserTable />
         <!-- Additional dashboard content -->
       </div>
     </div>
@@ -18,6 +17,7 @@
 
 <script setup>
 import Navbar from '~/components/Navbar.vue';
+import UserTable from '~/pages/UserTable.vue';
 </script>
 
 <style scoped>

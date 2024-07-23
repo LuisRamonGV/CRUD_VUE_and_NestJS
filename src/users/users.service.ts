@@ -16,6 +16,7 @@ export class UsersService {
         private logsService: LogsService
 
     ) {}
+    
     /**
      * Creates a new user with the given data.
      * @param data The data for the new user.
@@ -44,7 +45,7 @@ export class UsersService {
           });
     
           await this.mailService.sendWelcomeEmail(user.email);
-          await this.logsService.logActivity(`User ${user.email} deleted`);
+          await this.logsService.logActivity(`User ${user.email} created`);
     
           this.logger.log(`User created: ${user.email}`);
     

@@ -22,7 +22,7 @@ function logout() {
   const isConfirmed = confirm('¿Seguro que desea salir?');
 
   if (isConfirmed) {
-    router.push('/register');
+    router.push('/');
   }
 }
 </script>
