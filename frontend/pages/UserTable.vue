@@ -1,8 +1,14 @@
-<template>
-    <div class="p-4">
-      <button @click="toggleForm" class="bg-blue-500 text-white p-2 rounded mb-4">
+<<template>
+  <div class="p-4">
+    <div class="flex justify-between mb-4">
+      <!-- Add New User Button-->
+      <button @click="toggleForm" class="bg-blue-500 text-white p-2 rounded">
         {{ showForm ? 'Cancelar' : 'Agregar Nuevo Usuario' }}
       </button>
+
+      <!-- Search Field -->
+      <input v-model="searchQuery" type="text" placeholder="Buscar usuario por nombre o correo" class="w-1/4 p-2 border border-gray-300 rounded" />
+    </div>
   
       <!-- Modal Register New user -->
       <div v-if="showForm" class="mb-4">
@@ -53,7 +59,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="user in paginatedUsers" :key="user.id">
+          <tr v-for="user in filteredUsers" :key="user.id">
             <td class="px-4 py-2">{{ user.id }}</td>
             <td class="px-4 py-2">{{ user.name }}</td>
             <td class="px-4 py-2">{{ user.email }}</td>
@@ -128,6 +134,7 @@
   const userIdToDelete = ref(null);
   const currentPage = ref(1);
   const itemsPerPage = 10;
+  const searchQuery = ref('');
   
   const fetchUsers = async () => {
     try {
@@ -229,6 +236,16 @@
       fetchUsers();
     }
   };
+
+  const filteredUsers = computed(() => {
+  if (!searchQuery.value) {
+    return paginatedUsers.value;
+  }
+  return paginatedUsers.value.filter(user =>
+    user.name.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
+    user.email.toLowerCase().includes(searchQuery.value.toLowerCase())
+  );
+});
   
   onMounted(() => {
     fetchUsers();
