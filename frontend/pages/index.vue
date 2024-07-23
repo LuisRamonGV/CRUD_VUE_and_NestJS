@@ -86,6 +86,7 @@ const showConfirmPassword = ref(false);
 
 const successMessage = ref('');
 const errorMessage = ref('');
+const router = useRouter();
 
 const { $axios } = useNuxtApp();
 
@@ -130,6 +131,7 @@ async function handleSubmit() {
       const response = await $axios.post('/users', form.value);
        successMessage.value = 'Registro exitoso';
       console.log('Registro exitoso', response.data);
+      router.push('/dashboard');
     } catch (error) {
       errorMessage.value = 'Error en el registro: ' + (error.response?.data?.message || error.message);
       console.error('Error en el registro', error);
