@@ -1,8 +1,12 @@
-export default defineNuxtConfig({
+export default {
   css: ['@/assets/css/tailwind.css'],
 
   build: {
   },
+  
+  plugins: [
+    '~/plugins/axios.js',
+  ],
 
   modules: [
     '@pinia/nuxt',
@@ -10,4 +14,4 @@ export default defineNuxtConfig({
   ],
 
   compatibilityDate: '2024-07-22'
-});
+};

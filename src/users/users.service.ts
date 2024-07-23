@@ -26,8 +26,15 @@ export class UsersService {
         const { name, email, password } = data;
     
         const hashedPassword = await bcrypt.hash(password, 10);
-    
+
         try {
+          const existingUser = await this.prisma.user.findUnique({
+            where: { email },
+          });
+      
+          if (existingUser) {
+            throw new Error('El correo electrónico ya está en uso.');
+          }
           const user = await this.prisma.user.create({
             data: {
               name: name,
