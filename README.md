@@ -1,38 +1,30 @@
-# Proyecto Fullstack
+# Fullstack project
 
-Este proyecto es una aplicación fullstack que incluye un backend construido con NestJS y PrismaORM asi como un frontend construido con Nuxt3, Tailwind y Pinia. Utiliza Docker para la gestión de contenedores y Docker Compose para orquestar ambos servicios junto con una base de datos PostgreSQL.
+This project is a fullstack application that includes a backend built with NestJS and PrismaORM as well as a frontend built with Nuxt3, Tailwind and Pinia. It uses Docker for container management and Docker Compose to orchestrate both services along with a PostgreSQL database.
 
-## Requisitos Previos
+# Previous requirements
 
-- Docker: [Instalar Docker](https://docs.docker.com/get-docker/)
-- Docker Compose: [Instalar Docker Compose](https://docs.docker.com/compose/install/)
+- Docker: [Install Docker](https://docs.docker.com/get-docker/)
+- Docker Compose: [Install Docker Compose](https://docs.docker.com/compose/install/)
 
+## Enviroment configuration
 
-## Configuración de Entorno
+In the `docker-compose.yml` file, make sure to configure the environment variables for the database and API URLs according to your needs.
 
-En el archivo `docker-compose.yml`, asegúrate de configurar las variables de entorno para la base de datos y las URLs de la API según tus necesidades.
+# Project execution
 
-## Ejecución del Proyecto
+To build and run the project, follow these steps:
 
-Para construir y ejecutar el proyecto, sigue estos pasos:
+1. Clone the repository: ``powershell git clone https://github.com/LuisRamonGV/CRUD_VUE_and_NestJS.git cd CRUD_VUE_and_NestJS
 
-1. Clona el repositorio:
-   ``powershell
-   git clone https://github.com/LuisRamonGV/CRUD_VUE_and_NestJS.git
-   cd CRUD_VUE_and_NestJS
+2. Run Docker Desktop
 
-2. Ejecutar Docker Desktop
+3. Verify its operation
+   ``powershell docker --version
+   If it is working, it should show the version in use
 
-3. Verificar su funcionamietno
-   ``powershell
-   docker --version
+4. Run the command
+   ``powershell docker-compose up --build
 
-Si esta funcionadndo debera mostrar la version en uso
+5. URL. Frontend: http://localhost:5000 Backend: http://localhost:3000 
 
-4. Ejecutar el comando 
-   ``powershell
-   docker-compose up --build
-
-5. URL.
-   Frontend: http://localhost:5000
-   Backend: http://localhost:3000 -
