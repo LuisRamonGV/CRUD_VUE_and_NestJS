@@ -25,10 +25,12 @@ To build and run the project, follow these steps:
 4. Verify its operation
    ``powershell
    - docker --version
-   If it is working, it should show the version in use
+   - If it is working, it should show the version in use
 
 6. Run the command
    ``powershell docker-compose up --build
 
-7. URL. Frontend: http://localhost:5000 Backend: http://localhost:3000 
+7. URL.
+   - Frontend: http://localhost:5000
+   - Backend: http://localhost:3000 
 
