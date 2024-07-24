@@ -15,16 +15,20 @@ In the `docker-compose.yml` file, make sure to configure the environment variabl
 
 To build and run the project, follow these steps:
 
-1. Clone the repository: ``powershell git clone https://github.com/LuisRamonGV/CRUD_VUE_and_NestJS.git cd CRUD_VUE_and_NestJS
+1. Clone the repository:
+   ``powershell
+   - git clone https://github.com/LuisRamonGV/CRUD_VUE_and_NestJS.git
+   - cd CRUD_VUE_and_NestJS
 
-2. Run Docker Desktop
+3. Run Docker Desktop
 
-3. Verify its operation
-   ``powershell docker --version
+4. Verify its operation
+   ``powershell
+   - docker --version
    If it is working, it should show the version in use
 
-4. Run the command
+6. Run the command
    ``powershell docker-compose up --build
 
-5. URL. Frontend: http://localhost:5000 Backend: http://localhost:3000 
+7. URL. Frontend: http://localhost:5000 Backend: http://localhost:3000 
 
