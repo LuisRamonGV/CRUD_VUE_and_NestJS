@@ -16,9 +16,9 @@ In the `docker-compose.yml` file, make sure to configure the environment variabl
 To build and run the project, follow these steps:
 
 1. Clone the repository:
-   ``powershell
-   - git clone https://github.com/LuisRamonGV/CRUD_VUE_and_NestJS.git
-   - cd CRUD_VUE_and_NestJS
+   ```powershell
+   git clone https://github.com/LuisRamonGV/CRUD_VUE_and_NestJS.git
+   cd CRUD_VUE_and_NestJS
 
 3. Run Docker Desktop
 
